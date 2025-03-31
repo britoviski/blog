@@ -24,8 +24,26 @@
                         @csrf
 
 
+                        <select name="categoria_id" class="form-control">
+                            @foreach ($categorias as $value)
+                                <option value="{{ $value->id }}">{{ $value->nome }}</option>
+
+                            @endforeach
+
+
+                          </select>
+
+                        <div class="form-group">
+
                         <label>Título:</label>
-                        <input type="text" name="titulo" value="{{ $postagem->titulo }}"class="form-control">
+                        <input type="text" value="{{ $postagem->titulo }}" name="titulo" class="form-control">
+
+                        <label>Descrição:</label>
+                        <textarea name="descricao" rows="5" cols="33" class="form-control">
+                            {{ $postagem->descricao }}
+
+                        </textarea>
+
                         </div>
                         <button type="submit" class="btn btn-primary">ENVIAR</button>
                     </form>

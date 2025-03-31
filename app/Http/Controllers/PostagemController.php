@@ -38,6 +38,7 @@ class PostagemController extends Controller
         $validated = $request->validate([
             'categoria_id' => 'required',
             'titulo' => 'required|min:5',
+            'descricao' => 'required',
 
         ], $messages);
 
@@ -65,7 +66,8 @@ class PostagemController extends Controller
     public function edit(string $id)
     {
         $postagem = Postagem::find($id);
-        return view('postagem.postagem_edit', compact('postagem'));
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        return view('postagem.postagem_edit', compact('postagem', 'categorias'));
     }
 
     /**

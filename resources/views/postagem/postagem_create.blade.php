@@ -22,7 +22,7 @@
                     <form action="{{ url('postagem')}}" method="post">
                         @csrf
 
-                        <select name="catedoria_id" class="form-control">
+                        <select name="categoria_id" class="form-control">
                             @foreach ($categorias as $value)
                                 <option value="{{ $value->id }}">{{ $value->nome }}</option>
 
