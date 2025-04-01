@@ -26,7 +26,16 @@
 
                         <select name="categoria_id" class="form-control">
                             @foreach ($categorias as $value)
-                                <option value="{{ $value->id }}">{{ $value->nome }}</option>
+
+
+                                $@if ($value->id == $postagem->categoria_id)
+                                    <option selected value="{{ $value->id }}">{{ $value->nome }}</option>
+
+                                @else
+                                    <option value="{{ $value->id }}">{{ $value->nome }}</option>
+
+
+                                @endif
 
                             @endforeach
 

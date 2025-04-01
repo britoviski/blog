@@ -76,16 +76,20 @@ class PostagemController extends Controller
     public function update(Request $request, string $id)
     {
         $messages = [
-            'titulo.required' => 'O titulo é um campo obrigatório',
+            'titulo.required' => 'O título é um campo obrigatório',
         ];
 
         $validated = $request->validate([
-            'titulo' => 'titulo|min:5',
+            'categoria_id' => 'required',
+            'titulo' => 'required|min:5',
+            'descricao' => 'required',
 
         ], $messages);
 
         $postagem = Postagem::find($id);
+        $postagem->categoria_id = $request->categoria_id;
         $postagem->titulo = $request->titulo;
+        $postagem->descricao = $request->descricao;
         $postagem->save();
 
         return redirect()->route('postagem.index')->with('message', 'Postagem atualizada com sucesso!');
