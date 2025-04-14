@@ -74,7 +74,6 @@ class CategoriaController extends Controller
 
         $validated = $request->validate([
             'nome' => 'required|min:5',
-
         ], $messages);
 
         $categoria = Categoria::find($id);
