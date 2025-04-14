@@ -33,13 +33,13 @@
                         <tr>
                           <td>{{$value->id}}</td>
                           <td>{{$value->nome}}</td>
-                          <td>
-                            <a class="btn btn-info" href="{{ url('categoria/' . $value->id) }}">Visualizar</a>
-                            <a class="btn btn-warning" href="{{ url('categoria/' . $value->id . '/edit')}}">Editar</a>
+                          <td class="d-flex">
+                            <a class="btn btn-info btn-sm me-4" href="{{ url('categoria/' . $value->id) }}">Visualizar</a>
+                            <a class="btn btn-warning btn-sm me-4" href="{{ url('categoria/' . $value->id . '/edit')}}">Editar</a>
                             <form action="{{ url('categoria/' . $value->id) }}" method="post" onsubmit="return ConfirmDelete()">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-danger">EXCLUIR</button>
+                                <button type="submit" class="btn btn-danger btn-sm">EXCLUIR</button>
                             </form>
 
                           </td>
