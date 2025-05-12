@@ -8,7 +8,15 @@ Use App\Http\Controllers\SiteController;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+
+//----------------------------------------------------------
+//SITE
+//----------------------------------------------------------
+
 Route::get('/', [SiteController::class, 'index'])->name('site.index');
+
+Route::get('/PostagemByCategoriaId/{id}', [SiteController::class, 'PostagemByCategoriaId'])->name('site.PostagemByCategoriaId');
+Route::get('/PostagemByAutorId/{id}', [SiteController::class, 'PostagemByAutorId'])->name('site.PostagemByAutorId');
 
 Auth::routes();
 
