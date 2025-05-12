@@ -2,8 +2,6 @@
 
 @extends('layouts.app')
 
-
-
 @section('content')
     <!-- Main -->
     <section id="main">
@@ -15,7 +13,7 @@
                         <header>
                             <h2>{{ $value->titulo }}</h2>
                         </header>
-                        <p>{{ $value->conteudo }}</p>
+                        <p>{{ $value->descricao }}</p>
                     </article>
                 @endforeach
 
