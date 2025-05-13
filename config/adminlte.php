@@ -341,8 +341,8 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
+            'text' => 'Aterar Senha',
+            'url' => 'admin/alterarSenha',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
