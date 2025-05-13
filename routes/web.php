@@ -66,8 +66,7 @@ Route::middleware(['auth'])->group(function () {
     //----------------------------------------------------------
 
     Route::get('/admin/alterarSenha', [UserController::class, 'alterarSenha'])->name('admin.alterarSenha');
-
-
+    Route::put('admin/updateSenha', [UserController::class, 'updateSenha'])->name('admin.updateSenha');
 
 
 });
